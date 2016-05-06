@@ -5,8 +5,9 @@ class start
 	public static $controller;
 	public static $method;
 	private static $config;
+	public static $Pdos;
 	private static function init_db(){
-		DBpkg::Connect();
+		self::$Pdos=new Pdos;
 	}
 	private static function init_view(){
 		View::init('Smarty',self::$config['viewconfig']);
